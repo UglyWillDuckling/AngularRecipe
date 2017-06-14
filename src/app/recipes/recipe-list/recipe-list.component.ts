@@ -13,6 +13,6 @@ export class RecipeListComponent {
         'jogurt-sa-hrskavim-sjemenkama-6fe070031f77f926d0212739da2d20fb_header.jpg?v=14');
 
     onSelected(recipe: Recipe) {
-        this.recipeSelected.emit(recipe);
-    }
+    this.recipeSelected.emit(recipe);
+}
 }
