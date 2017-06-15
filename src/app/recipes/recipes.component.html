@@ -1,8 +1,14 @@
 <div class="ro">
-  <div class="col-md-5">
-    <rb-recipe-list (recipeSelected)="selectedRecipe = $event"></rb-recipe-list>
-  </div>
-  <div class="col-md-7">
-    <rb-recipe-detail [selectedRecipe]="selectedRecipe"></rb-recipe-detail>
-  </div>
+    <div>
+        <button class="btn btn-primary" (click)="openCreate()">create Recipe</button>
+    </div>
+
+    <rb-create-recipe *ngIf="createRecipe" [recipes]="recipes"></rb-create-recipe>
+
+    <div class="col-md-5">
+        <rb-recipe-list (recipeSelected)="selectedRecipe = $event" [recipes]="recipes"></rb-recipe-list>
+    </div>
+    <div class="col-md-7">
+        <rb-recipe-detail [selectedRecipe]="selectedRecipe"></rb-recipe-detail>
+    </div>
 </div>

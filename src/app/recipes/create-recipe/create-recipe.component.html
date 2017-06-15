@@ -1,0 +1,18 @@
+<div class="row" #recipeForm>
+    <div>
+        <label>
+            <span>Name</span><input type="text" #name>
+        </label>
+    </div>
+    <div>
+        <label>
+            <span>Description</span><input type="text" #description>
+        </label>
+    </div>
+    <div>
+        <label>
+            <span>Image</span><input type="file" #image>
+        </label>
+    </div>
+    <button class="btn btn-secondary" (click)="saveRecipe(name.value, description.value, image.value)">Save Recipe</button>
+</div>
