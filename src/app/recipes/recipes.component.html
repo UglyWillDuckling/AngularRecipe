@@ -3,12 +3,13 @@
         <button class="btn btn-primary" (click)="openCreate()">create Recipe</button>
     </div>
 
-    <rb-create-recipe *ngIf="createRecipe" [recipes]="recipes"></rb-create-recipe>
+    <rb-create-recipe *ngIf="createRecipe"></rb-create-recipe>
 
     <div class="col-md-5">
-        <rb-recipe-list (recipeSelected)="selectedRecipe = $event" [recipes]="recipes"></rb-recipe-list>
+        <rb-recipe-list></rb-recipe-list>
     </div>
+
     <div class="col-md-7">
-        <rb-recipe-detail [selectedRecipe]="selectedRecipe"></rb-recipe-detail>
+        <rb-recipe-detail></rb-recipe-detail>
     </div>
 </div>
