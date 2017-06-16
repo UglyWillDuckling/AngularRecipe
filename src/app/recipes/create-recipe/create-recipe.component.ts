@@ -1,6 +1,6 @@
-import {Component, OnInit, ElementRef, Input, ViewChild} from '@angular/core';
-import {Recipe} from "../recipe";
+import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {RecipeService} from "../../shared/recipe.service";
+import {Recipe} from "../recipe";
 
 @Component({
     selector: 'rb-create-recipe',
@@ -9,19 +9,14 @@ import {RecipeService} from "../../shared/recipe.service";
         'span { min-width: 100px;  display: inline-block; }'
     ]
 })
-export class CreateRecipeComponent implements OnInit{
-    @Input() recipes: Recipe[];
+export class CreateRecipeComponent {
     @ViewChild('recipeForm') recipeForm:ElementRef;
 
     constructor(public recipeService:RecipeService) {}
 
-    ngOnInit() {
-        this.recipes = this.recipeService.getRecipes();
-    }
-
     saveRecipe(name:string, description:string, image:string) {
         if(name && description) {
-            this.recipes.push(
+            this.recipeService.getRecipes().push(
                 new Recipe(name, description, 'image', []));
             this.resetInputs();
         }

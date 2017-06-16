@@ -1,6 +1,6 @@
 <div class="ro">
     <div>
-        <button class="btn btn-primary" (click)="openCreate()">create Recipe</button>
+        <button class="btn btn-primary" (click)="openCreate()">{{!createRecipe ? 'createRecipe' : 'close Create'}}</button>
     </div>
 
     <rb-create-recipe *ngIf="createRecipe"></rb-create-recipe>
