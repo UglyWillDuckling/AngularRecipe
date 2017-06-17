@@ -1,5 +1,6 @@
 import {Output} from "@angular/core";
 import {Recipe} from "../recipes";
+import {Ingredient} from "./ingredient";
 
 export class RecipeService {
     recipes:Recipe[] =[];
@@ -8,7 +9,10 @@ export class RecipeService {
     constructor() {
         this.recipes = [
             new Recipe('Schnitzel', 'Very tasty', 'http://www.daringgourmet.com/wp-content/uploads/2014/03/Schnitzel-7_edited.jpg', []),
-            new Recipe('Summer Salad', 'Okayish', 'http://jetspizza.com/dbphotos/display/c161462910486f60cf38484ecf458adf/664/410', []),
+            new Recipe('Summer Salad', 'Okayish', 'http://jetspizza.com/dbphotos/display/c161462910486f60cf38484ecf458adf/664/410', [
+                new Ingredient('French Fries', 2),
+                new Ingredient('potato', 2)
+            ]),
         ];
         //TODO load recipes from backend
     }
