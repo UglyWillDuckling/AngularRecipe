@@ -8,5 +8,5 @@ import { RecipesComponent } from './recipes';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'rb works!';
+  title = 'Recipe Book works!';
 }

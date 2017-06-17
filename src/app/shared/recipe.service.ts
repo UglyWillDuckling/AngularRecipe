@@ -1,8 +1,9 @@
+import {Output} from "@angular/core";
 import {Recipe} from "../recipes";
 
 export class RecipeService {
     recipes:Recipe[] =[];
-    selectedRecipe:Recipe;
+    @Output() selectedRecipe:Recipe;
 
     constructor() {
         this.recipes = [
@@ -20,8 +21,8 @@ export class RecipeService {
         this.recipes.push(recipe);
     }
 
-    removeRecipe(index:number) {
-        this.recipes.slice(index, 1);
+    removeRecipe(recipe:Recipe) {
+        this.recipes.splice(this.recipes.indexOf(recipe), 1);
     }
 
     selectRecipe(recipe:Recipe) {

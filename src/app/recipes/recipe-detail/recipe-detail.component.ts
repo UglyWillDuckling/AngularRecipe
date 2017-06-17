@@ -14,4 +14,8 @@ export class RecipeDetailComponent implements OnInit{
   ngOnInit() {
       this.selectedRecipe = this.recipeService.getSelectedRecipe()
   }
+
+    deleteRecipe(recipe) {
+      this.recipeService.removeRecipe(recipe);
+    }
 }
